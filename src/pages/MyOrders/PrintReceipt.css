@@ -1,0 +1,48 @@
+.print-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+.print-button:hover {
+    background-color: #45a049;
+}
+
+@media print {
+    body {
+        margin: 0;
+        padding: 20px;
+        font-size: 12pt;
+    }
+
+    .receipt {
+        page-break-inside: avoid;
+        border: 1px solid #ddd;
+        padding: 20px;
+        box-shadow: none;
+    }
+
+    .header {
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 15px;
+    }
+
+    .order-details, .item-list, .payment-details {
+        margin: 15px 0;
+    }
+
+    .total {
+        border-top: 1px solid #ddd;
+        padding-top: 15px;
+    }
+
+    /* Hide non-receipt elements when printing */
+    .my-orders > *:not(.receipt) {
+        display: none;
+    }
+}
